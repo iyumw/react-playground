@@ -1,7 +1,24 @@
-﻿
+﻿import { useState } from "react"
+
 function Contador() {
+
+  const [valor, setValor] = useState(0)
+
+  function handleClick(){
+    setValor(valor + 1)
+  }
+
+  function handleClickSub(){
+    setValor(valor - 1)
+  }
+
   return (
-    <div>Componente Contador</div>
+    <div>
+    <h2>Componente Contador</h2>  
+    <p>O valor atual do contador é: {valor}</p>
+    <button onClick={handleClick}>Adicionar 1</button>
+    <button onClick={handleClickSub}>Subtrair 1</button>
+    </div>
   )
 }
 
